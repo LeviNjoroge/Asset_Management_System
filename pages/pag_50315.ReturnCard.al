@@ -48,4 +48,5 @@ page 50315 Return_CardPage
 
     var
         myInt: Integer;
+    
 }
