@@ -1,8 +1,8 @@
 table 50301 "Employees Table"
 {
     DataClassification = ToBeClassified;
-    // LookupPageId = "Employees List";
-    // DrillDownPageId = "Employees List";
+    LookupPageId = "Employees List";
+    DrillDownPageId = "Employees List";
     
     fields
     {

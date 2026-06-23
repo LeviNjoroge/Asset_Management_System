@@ -4,6 +4,7 @@ page 50310 "Lending Registration Card"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Lending Table";
+    Caption = 'Lending Registration';
     
     layout
     {

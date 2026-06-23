@@ -4,6 +4,7 @@ page 50315 Return_CardPage
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = Return_Table;
+    Caption = 'Return Registration';
 
     layout
     {

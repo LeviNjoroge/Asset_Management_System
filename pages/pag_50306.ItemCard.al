@@ -1,6 +1,7 @@
 page 50306 Item_Card
 {
     PageType = Card;
+    Caption = 'Item Registration';
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = ItemsTable;

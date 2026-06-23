@@ -9,8 +9,8 @@ page 50301 "Employee Registration Card"
     {
         area(Content)
         {
-            group(General)
-            {
+            // group(General)
+            // {
                 field(Employee_No; Rec.Employee_No)
                 {
                     ApplicationArea = All;
@@ -37,7 +37,7 @@ page 50301 "Employee Registration Card"
                     ApplicationArea = All;
                 }
                 
-            }
+            // }
         }
     }
     

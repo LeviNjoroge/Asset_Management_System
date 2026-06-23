@@ -16,11 +16,6 @@ table 50303 "Lending Table"
             TableRelation = "Employees Table";
             
         }
-        // field(8; EmployeeName; Text[50])
-        // {
-        //     DataClassification = ToBeClassified;
-        //     TableRelation = "Employees Table";
-        // }
         field(3; ItemID; Integer)
         {
             DataClassification = ToBeClassified;

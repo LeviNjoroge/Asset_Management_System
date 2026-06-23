@@ -1,6 +1,7 @@
 page 50305 Item_List
 {
     PageType = List;
+    Caption = 'Items List';
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = ItemsTable;
