@@ -14,11 +14,17 @@ table 50303 "Lending Table"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Employees Table";
+            
         }
+        // field(8; EmployeeName; Text[50])
+        // {
+        //     DataClassification = ToBeClassified;
+        //     TableRelation = "Employees Table";
+        // }
         field(3; ItemID; Integer)
         {
             DataClassification = ToBeClassified;
-            // TableRelation = "Items Table";
+            TableRelation = ItemsTable;
         }
         field(4; Quatity; Integer)
         {

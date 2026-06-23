@@ -9,8 +9,8 @@ page 50310 "Lending Registration Card"
     {
         area(Content)
         {
-            group(General)
-            {
+            // group(General)
+            // {
                 field(LendingID; Rec.LendingID)
                 {
                     ApplicationArea = All;
@@ -19,10 +19,13 @@ page 50310 "Lending Registration Card"
                 field(EmployeeID; Rec.EmployeeID)
                 {
                     ApplicationArea = All;
+                    TableRelation = "Employees Table";
                 }
+                
                 field(ItemID; Rec.ItemID)
                 {
                     ApplicationArea = All;
+                    TableRelation = ItemsTable;
                 }
                 field(Quatity; Rec.Quatity)
                 {
@@ -36,7 +39,7 @@ page 50310 "Lending Registration Card"
                 {
                     ApplicationArea = All;
                 }
-            }
+            // }
         }
     }
     
