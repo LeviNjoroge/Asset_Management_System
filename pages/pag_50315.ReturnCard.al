@@ -1,9 +1,9 @@
-page 50306 Item_Card
+page 50315 Return_CardPage
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = ItemsTable;
+    SourceTable = Return_Table;
 
     layout
     {
@@ -11,31 +11,23 @@ page 50306 Item_Card
         {
             // group(GroupName)
             // {
-            field("Item No."; Rec.Item_no)
+            field("Return ID"; Rec.Return_ID)
             {
             }
-            field("Item Category"; Rec.Item_Category)
+            field("Lending ID"; Rec."Lending_ID")
             {
-
             }
-            field("Item Name"; Rec.Item_Name)
+            field("Return Date"; Rec."Date_Of_Return")
             {
-
             }
-            field("Item Description"; Rec.Item_Description)
+            field("Condition Of Item"; Rec."Condition_Of_Item")
             {
-
             }
-            field("Value"; Rec.Value)
+            field("Description"; Rec."Description")
             {
-
             }
-            field("Quantity"; Rec.Quantity)
-            {
-
-            }
+            // }
         }
-        // }
     }
 
     actions
