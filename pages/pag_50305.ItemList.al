@@ -4,7 +4,8 @@ page 50305 Item_List
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = ItemsTable;
-    
+    CardPageId = 50306;
+
     layout
     {
         area(Content)
@@ -38,22 +39,22 @@ page 50305 Item_List
             }
         }
     }
-    
+
     actions
     {
         area(Processing)
         {
             action(ActionName)
             {
-                
+
                 trigger OnAction()
                 begin
-                    
+
                 end;
             }
         }
     }
-    
+
     var
         myInt: Integer;
 }
