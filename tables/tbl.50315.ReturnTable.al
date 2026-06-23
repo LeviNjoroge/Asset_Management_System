@@ -12,6 +12,7 @@ table 50315 Return_Table
         field(2; Lending_ID; Integer)
         {
             DataClassification = ToBeClassified;
+            TableRelation = "Lending Table";
         }
         field(3; Date_Of_Return; Date)
         {
