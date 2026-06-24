@@ -38,7 +38,7 @@ table 50305 ItemsTable
 
     keys
     {
-        key(Key1; Item_no)
+        key(Key1; Item_no, Item_Name)
         {
             Clustered = true;
         }
