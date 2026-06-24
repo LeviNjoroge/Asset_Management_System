@@ -75,4 +75,5 @@ table 50303 "Lending Table"
     begin
         
     end;
+    
 }
