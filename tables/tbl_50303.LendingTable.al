@@ -1,7 +1,7 @@
 table 50303 "Lending Table"
 {
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; LendingID; Integer)
@@ -14,7 +14,7 @@ table 50303 "Lending Table"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Employees Table";
-            
+
         }
         field(3; ItemID; Integer)
         {
@@ -36,10 +36,10 @@ table 50303 "Lending Table"
         field(7; Status; Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = Pending, Returned;
+            OptionMembers = Pending,Returned;
         }
     }
-    
+
     keys
     {
         key(PK; LendingID)
@@ -47,32 +47,32 @@ table 50303 "Lending Table"
             Clustered = true;
         }
     }
-    
+
     fieldgroups
     {
         // Add changes to field groups here
     }
-    
+
     var
         myInt: Integer;
-    
+
     trigger OnInsert()
     begin
-        
+
     end;
-    
+
     trigger OnModify()
     begin
-        
+
     end;
-    
+
     trigger OnDelete()
     begin
-        
+
     end;
-    
+
     trigger OnRename()
     begin
-        
+
     end;
 }
