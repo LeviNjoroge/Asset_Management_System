@@ -1,6 +1,8 @@
 table 50305 ItemsTable
 {
     DataClassification = ToBeClassified;
+    LookupPageId = Item_List;
+
 
     fields
     {
