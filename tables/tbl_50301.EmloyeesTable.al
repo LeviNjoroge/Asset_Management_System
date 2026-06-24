@@ -3,10 +3,10 @@ table 50301 "Employees Table"
     DataClassification = ToBeClassified;
     LookupPageId = "Employees List";
     DrillDownPageId = "Employees List";
-    
+
     fields
     {
-        field(1;"Employee_No"; Integer)
+        field(1; "Employee_No"; Integer)
         {
             DataClassification = ToBeClassified;
             AutoIncrement = true;
@@ -33,41 +33,41 @@ table 50301 "Employees Table"
             DataClassification = ToBeClassified;
         }
     }
-    
+
     keys
     {
-        key(PK; "Employee_No")
+        key(PK; "Employee_No", "Employee Name")
         {
             Clustered = true;
         }
     }
-    
+
     fieldgroups
     {
         // Add changes to field groups here
     }
-    
+
     var
         myInt: Integer;
-    
+
     trigger OnInsert()
     begin
-        
+
     end;
-    
+
     trigger OnModify()
     begin
-        
+
     end;
-    
+
     trigger OnDelete()
     begin
-        
+
     end;
-    
+
     trigger OnRename()
     begin
-        
+
     end;
-    
+
 }

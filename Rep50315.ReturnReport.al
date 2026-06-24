@@ -33,6 +33,10 @@ report 50315 "Return Report"
                 column(DateOfReturn; "Date of Return")
                 {
                 }
+                column(Status; Status)
+                {
+
+                }
             }
             column(Lending_ID; Lending_ID)
             {
