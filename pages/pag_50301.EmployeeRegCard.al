@@ -9,14 +9,14 @@ page 50301 "Employee Registration Card"
     {
         area(Content)
         {
-            // group(General)
-            // {
-                field(Employee_No; Rec.Employee_No)
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Employee Name"; Rec."Employee Name")
+            field(Employee_No; Rec.Employee_No)
+            {
+                ApplicationArea = All;
+                Editable = false;
+            }
+            group(General)
+            {
+                field("Full name"; Rec."Employee Name")
                 {
                     ApplicationArea = All;
                 }
@@ -24,20 +24,20 @@ page 50301 "Employee Registration Card"
                 {
                     ApplicationArea = All;
                 }
-                field(Phone_Number; Rec.Phone_Number)
+                field("Phone Number"; Rec.Phone_Number)
                 {
                     ApplicationArea = All;
                 }
-                field(Email_Address; Rec.Email_Address)
+                field("Email Address"; Rec.Email_Address)
                 {
                     ApplicationArea = All;
                 }
-                field("National_ID/Passport"; Rec."National_ID/Passport")
+                field("National ID or Passport Number"; Rec."National_ID/Passport")
                 {
                     ApplicationArea = All;
                 }
                 
-            // }
+            }
         }
     }
     

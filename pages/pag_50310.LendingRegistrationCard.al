@@ -4,31 +4,31 @@ page 50310 "Lending Registration Card"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Lending Table";
-    Caption = 'Lending Registration';
+    Caption = 'Item lending card';
     
     layout
     {
         area(Content)
         {
-            // group(General)
-            // {
-                field(LendingID; Rec.LendingID)
+            field(LendingID; Rec.LendingID)
                 {
                     ApplicationArea = All;
                     Editable = false;
                 }
-                field(EmployeeID; Rec.EmployeeID)
+            group(General)
+            {
+                field(Employee; Rec.EmployeeID)
                 {
                     ApplicationArea = All;
                     TableRelation = "Employees Table";
                 }
                 
-                field(ItemID; Rec.ItemID)
+                field(Item; Rec.ItemID)
                 {
                     ApplicationArea = All;
                     TableRelation = ItemsTable;
                 }
-                field(Quatity; Rec.Quatity)
+                field("No. of Items"; Rec.Quatity)
                 {
                     ApplicationArea = All;
                 }
@@ -40,25 +40,40 @@ page 50310 "Lending Registration Card"
                 {
                     ApplicationArea = All;
                 }
-            // }
+            }
         }
     }
     
     actions
     {
-        area(Processing)
+        area(Promoted)
         {
-            action(ActionName)
+            actionref("Register Employee"; EmployeesCard){}
+            actionref("Return Item";ReturnsCard){}
+        }
+        area(Navigation)
+        {
+            action(EmployeesCard)
             {
-                
+                Image = Employee;
                 trigger OnAction()
                 begin
-                    
+                    varEmployeesCard.Run();
+                end;
+            }
+            action(ReturnsCard)
+            {
+                Image = ReturnShipment;
+                trigger OnAction()
+                begin
+                    varReturnsCard.Run();
                 end;
             }
         }
     }
-    
+
     var
-        myInt: Integer;
+        varLendingsReport : Report Lendings_Report;
+        varEmployeesCard : Page "Employee Registration Card";
+        varReturnsCard : Page Return_CardPage;
 }

@@ -1,4 +1,4 @@
-report 50303 "Asset Tracking Report"
+report 50304 "Asset Tracking Report1"
 {
     ApplicationArea = All;
     Caption = 'Asset Tracking Report';
@@ -33,18 +33,18 @@ report 50303 "Asset Tracking Report"
             // "Employees Table"
             //DataItemLink = Employee_No = field(EmployeeID);
 
-            column(EmployeeName; varEmployeesTable."Employee Name")
-            {
-            }
-            column(Department; varEmployeesTable.Department)
-            {
-            }
-            column(PhoneNumber; varEmployeesTable.Phone_Number)
-            {
-            }
-            column(EmailAddress; varEmployeesTable.Email_Address)
-            {
-            }
+            // column(EmployeeName; "Employee Name")
+            // {
+            // }
+            // column(Department; Department)
+            // {
+            // }
+            // column(PhoneNumber; Phone_Number)
+            // {
+            // }
+            // column(EmailAddress; Email_Address)
+            // {
+            // }
             // ItemsTable
             // DataItemLink = Item_no = field(ItemID)
             // column(ItemName; Item_Name)
@@ -84,8 +84,4 @@ report 50303 "Asset Tracking Report"
             }
         }
     }
-    var
-        varEmployeesTable : Record "Employees Table";
-        varItemsTable : Record ItemsTable;
-        varReturnsTable : Record Return_Table;
 }

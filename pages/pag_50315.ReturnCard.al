@@ -4,17 +4,17 @@ page 50315 Return_CardPage
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = Return_Table;
-    Caption = 'Return Registration';
+    Caption = 'Item return card';
 
     layout
     {
         area(Content)
         {
-            // group(GroupName)
-            // {
             field("Return ID"; Rec.Return_ID)
             {
             }
+            group("")
+            {
             field("Lending ID"; Rec."Lending_ID")
             {
             }
@@ -26,8 +26,9 @@ page 50315 Return_CardPage
             }
             field("Description"; Rec."Description")
             {
+                Editable = Rec.Condition_Of_Item = Rec."Condition_Of_Item"::Severely_Damaged;
             }
-            // }
+            }
         }
     }
 
