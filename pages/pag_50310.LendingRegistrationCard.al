@@ -28,6 +28,11 @@ page 50310 "Lending Registration Card"
                     ApplicationArea = All;
                     TableRelation = ItemsTable;
                 }
+                field(ItemName;Rec.ItemName)
+                {
+                    ApplicationArea = All;
+                    Enabled = false;
+                }
                 field("No. of Items"; Rec.Quatity)
                 {
                     ApplicationArea = All;
@@ -48,8 +53,28 @@ page 50310 "Lending Registration Card"
     {
         area(Promoted)
         {
-            actionref("Register Employee"; EmployeesCard){}
-            actionref("Return Item";ReturnsCard){}
+            group(Employees){
+                // view employee list, add employee
+                actionref("Register Employee"; EmployeesCard){}
+                actionref("View Employees list"; EmployeesList){}
+            }
+            group(Items){
+                // view and add items
+                actionref("Items Registation"; ItemsCard){}
+                actionref("Items List"; ItemsList){}
+
+            }
+            group(Lending){
+                // apply for lendinga and view lendings list
+                actionref(Lending_Card; LendingsCard){}
+                actionref(Lending_List; LendingsList){}
+            }
+            group(Returns)
+            {
+                // apply for an item return and view returns list
+                actionref("Return Item";ReturnsCard){}
+                actionref(ReturnList; ReturnsList){}
+            }
         }
         area(Navigation)
         {
@@ -61,6 +86,42 @@ page 50310 "Lending Registration Card"
                     varEmployeesCard.Run();
                 end;
             }
+            action(EmployeesList)
+            {
+                Image = EmployeeAgreement;
+                trigger OnAction()
+                begin
+                    varEmployeesList.Run();
+                end;
+            }
+            action(ItemsCard)
+            {
+                trigger OnAction()
+                begin
+                    varItemReg.Run();
+                end;
+            }
+            action(ItemsList)
+            {
+                trigger OnAction()
+                begin
+                    varItemList.Run();
+                end;
+            }
+            action(LendingsCard)
+            {
+                trigger OnAction()
+                begin
+                    varLendingReg.Run();
+                end;
+            }
+            action(LendingsList)
+            {
+                trigger OnAction()
+                begin
+                    varLendingList.Run();
+                end;
+            }
             action(ReturnsCard)
             {
                 Image = ReturnShipment;
@@ -69,11 +130,23 @@ page 50310 "Lending Registration Card"
                     varReturnsCard.Run();
                 end;
             }
+            action(ReturnsList)
+            {
+                trigger OnAction()
+                begin
+                    varReturnsList.Run();
+                end;
+            }
         }
     }
 
     var
-        varLendingsReport : Report Lendings_Report;
         varEmployeesCard : Page "Employee Registration Card";
+        varEmployeesList : Page "Employees List";
+        varItemReg : Page Item_Card;
+        varItemList : Page Item_List;
+        varLendingReg : Page "Lending Registration Card";
+        varLendingList : Page "Lending List";
         varReturnsCard : Page Return_CardPage;
+        varReturnsList : Page Return_List;
 }
