@@ -28,11 +28,7 @@ page 50310 "Lending Registration Card"
                     ApplicationArea = All;
                     TableRelation = ItemsTable;
                 }
-                field(ItemName;Rec.ItemName)
-                {
-                    ApplicationArea = All;
-                    Enabled = false;
-                }
+
                 field("No. of Items"; Rec.Quatity)
                 {
                     ApplicationArea = All;
