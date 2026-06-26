@@ -61,6 +61,7 @@ report 50303 "Asset Tracking Report"
             dataitem(ReturnTable; Return_Table)
             {
                 DataItemLink = Lending_ID = field(LendingID);
+
                 column(ConditionOfItem; Condition_Of_Item)
                 {
                 }
