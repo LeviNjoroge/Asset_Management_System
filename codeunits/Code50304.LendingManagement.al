@@ -24,14 +24,18 @@ codeunit 50304 "Lending Management"
         Items : Record ItemsTable;
     begin
         if Items.Get(ItemID) then
-            Items.Quantity := Items.Quantity- Quantity;
+            if Items.Quantity >= Quantity then begin
+                Items.Quantity := Items.Quantity- Quantity;
+            end else begin
+                Error('Not enough items in stock to fulfil request!');
+            end;
     end;
 
-    procedure ReturnItem()
+    procedure ReturnItem(ItemID: Integer; Quantity: Integer)
     var
         Items : Record ItemsTable;
     begin
         if Items.Get(ItemID) then
-            Items.Quantity := Items.Quantity- Quantity;
+            Items.Quantity := Items.Quantity + Quantity;
     end;
 }

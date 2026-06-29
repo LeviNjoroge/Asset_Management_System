@@ -16,17 +16,20 @@ table 50301 "Employees Table"
         {
             DataClassification = ToBeClassified;
         }
-        field(3; Department; Text[30])
+        field(3; Department; Option)
         {
             DataClassification = ToBeClassified;
+            OptionMembers = "Dev", "Infra", "Mobility", "Portals", "Functionals", "Admin"; 
         }
-        field(4; Phone_Number; Code[13])
+        field(4; Phone_Number; Text[13])
         {
             DataClassification = ToBeClassified;
+            ExtendedDatatype = PhoneNo;
         }
-        field(5; Email_Address; Code[50])
+        field(5; Email_Address; Text[50])
         {
             DataClassification = ToBeClassified;
+            ExtendedDatatype = EMail;
         }
         field(6; "National_ID/Passport"; Code[10])
         {
