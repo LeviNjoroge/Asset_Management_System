@@ -14,9 +14,9 @@ codeunit 50303 "Send Notification"
             Message('Sending to %1', Employee.Email_Address);
             EmailMgt.SendNotification(
                 Employee.Email_Address,
-                'Test Email',
+                'Successful Registration',
                 'Hello ' + Employee."Employee Name" +
-                ', this is a test email from the Asset Management System.');
+                ',You have successfully registered in the Asset Management System. You can now borrow items from the system.');
         end else
             Error('Employee not found.');
     end;
