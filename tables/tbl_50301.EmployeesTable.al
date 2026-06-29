@@ -36,10 +36,11 @@ table 50301 "Employees Table"
 
     keys
     {
-        key(PK; "Employee_No", "Employee Name")
+        key(PK; "Employee_No")
         {
             Clustered = true;
         }
+        key(FK1; "Employee Name"){}
     }
 
     fieldgroups

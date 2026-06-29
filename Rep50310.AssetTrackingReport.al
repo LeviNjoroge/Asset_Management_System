@@ -1,51 +1,50 @@
-report 50315 "Return Report"
+report 50310 AssetTrackingReport
 {
     ApplicationArea = All;
-    Caption = 'Return Report';
+    Caption = 'AssetTrackingReport';
     UsageCategory = ReportsAndAnalysis;
-    DefaultLayout = RDLC;
-    RDLCLayout = 'ReturnReport.rdl';
+    DefaultLayout = Excel;
+    ExcelLayout = 'assettrackingrep.xlsx';
     dataset
     {
         dataitem(Return_Table; Return_Table)
         {
-            column(Condition_Of_Item; Condition_Of_Item)
+            column(Return_ID; Return_ID)
+            {
+            }
+            column(Lending_ID; Lending_ID)
             {
             }
             column(Date_Of_Return; Date_Of_Return)
             {
             }
+            column(Condition_Of_Item; Condition_Of_Item)
+            {
+            }
             column(Description; Description)
             {
             }
-            dataitem(LendingTable; "Lending Table")
+            dataitem("Lending Table";"Lending Table")
             {
                 DataItemLink = LendingID = field(Lending_ID);
+                column(EmployeeID; EmployeeID)
+                {
+                }
                 column(ItemID; ItemID)
                 {
                 }
                 column(Quatity; Quatity)
                 {
                 }
-                column(DateOfIssue; "Date of Issue")
+                column(DateofIssue; "Date of Issue")
                 {
                 }
-                column(DateOfReturn; "Date of Return")
+                column(DateofReturn; "Date of Return")
                 {
                 }
                 column(Status; Status)
                 {
-
                 }
-            }
-            column(Lending_ID; Lending_ID)
-            {
-            }
-            column(Return_ID; Return_ID)
-            {
-            }
-            column(SystemCreatedAt; SystemCreatedAt)
-            {
             }
         }
     }
@@ -66,5 +65,10 @@ report 50315 "Return Report"
             {
             }
         }
+        // create a codeunit or sth of sorts to populate the data for Emp name, dept, contact
+        // such as select - from - where emp id = $
+        // or item
     }
+    var
+        varDataRetrieval : Codeunit DataRetreaval;
 }

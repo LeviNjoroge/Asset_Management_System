@@ -905,9 +905,6 @@ End Function
         <Field Name="Return_ID">
           <DataField>Return_ID</DataField>
         </Field>
-        <Field Name="SystemCreatedAt">
-          <DataField>SystemCreatedAt</DataField>
-        </Field>
         <Field Name="ItemID">
           <DataField>ItemID</DataField>
         </Field>

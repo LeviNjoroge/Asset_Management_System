@@ -58,4 +58,5 @@ page 50301 "Employee Registration Card"
     
     var
         myInt: Integer;
+
 }

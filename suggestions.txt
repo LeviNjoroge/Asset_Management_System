@@ -1,2 +1,3 @@
 25/06
 The items category part to be an options type [phone, laptop, projector, monitor, computer, TV]
+Just use the 
