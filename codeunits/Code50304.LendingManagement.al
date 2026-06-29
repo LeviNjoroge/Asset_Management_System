@@ -33,7 +33,7 @@ codeunit 50304 "Lending Management"
 
     procedure ReturnItem(ItemID: Integer; Quantity: Integer)
     var
-        Items: Record ItemsTable;
+        Items : Record ItemsTable;
     begin
         if Items.Get(ItemID) then
             Items.Quantity := Items.Quantity + Quantity;
