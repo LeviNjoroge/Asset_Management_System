@@ -42,10 +42,6 @@ codeunit 50303 "Send Notification"
                     Format(ReturnDate)));
     end;
 
-
-
-
-
     procedure CheckDateAndSendEmail()
     var
         Employee: Record "Employees Table";
