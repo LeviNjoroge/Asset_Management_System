@@ -15,8 +15,12 @@ report 50310 "Asset Tracking Report"
             column(EmployeeID; EmployeeID)
             {
             }
-            // column("Borrowers_Name"; dataRetreaval.GetEmployeeName(EmployeeID)){}
+            column(Borrower; varDataRetreaval.GetEmployeeName(EmployeeID)){}
+            column(Departmaent;varDataRetreaval.GetDepartment(EmployeeID)){}
             column(ItemID; ItemID)
+            {
+            }
+            column(ItemName;varDataRetreaval.GetItemName(ItemID))
             {
             }
             column(Quatity; Quatity)
@@ -37,16 +41,30 @@ report 50310 "Asset Tracking Report"
                 column(Return_ID; Return_ID)
                 {
                 }
-                column(Lending_ID; Lending_ID)
-                {
-                }
-                column(Date_Of_Return; Date_Of_Return)
+                column(Actual_Date_Of_Return; Date_Of_Return)
                 {
                 }
                 column(Condition_Of_Item; Condition_Of_Item)
                 {
                 }
+                column(Description;Description)
+                {   
+                }
             }
+            // trigger OnAfterGetRecord()
+            // var
+            //     dataRetreaval : Codeunit DataRetreaval;
+            //     Employee : Record "Employees Table";
+            //     Items : Record ItemsTable;
+            // begin
+            //     if dataRetreaval.getEmployee(EmployeeID) then begin
+            //         EmployeeName := Employee."Employee Name";
+            //         Departmaent := Employee.Department;
+            //     end;
+            //     if dataRetreaval.getItem(ItemID) then begin
+            //         ItemName := Items.Item_Name;
+            //     end;
+            // end;
         }
     }
     requestpage
@@ -69,5 +87,6 @@ report 50310 "Asset Tracking Report"
     }
 
     var
-        dataRetreaval : Codeunit DataRetreaval;
+        varDataRetreaval : Codeunit DataRetreaval;
+
 }
