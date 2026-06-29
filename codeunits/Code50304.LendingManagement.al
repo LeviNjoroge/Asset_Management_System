@@ -2,16 +2,36 @@ codeunit 50304 "Lending Management"
 {
     // Procedures in this codeunit include:
     // 1. ChangeStatus - which changes the status value in the item when item is returned --- triggered by the "Mark as returned" button in the returns table
-    // 2. 
+    // 2. LendItem, ReturnItem - Update the number of items in stock
     // 3. 
 
-    procedure ChangeStatus(LendingId: Integer)
+    procedure UpdateStatus(LendingId: Integer): Boolean
     var
         LendingTable : Record "Lending Table";
     begin
-        if not LendingTable.Get(LendingId) then
+        if LendingTable.Get(LendingId) then begin
+            LendingTable.Status:= LendingTable.Status::Returned;
+            LendingTable.Modify();
+            exit(true);
+        end else begin
             Error('Lending ID %1 not found!', LendingId);
-        LendingTable.Status:= LendingTable.Status::Returned;
-        LendingTable.Modify();
+            exit(false);
+        end;
+    end;
+
+    procedure LendItem(ItemID: Integer; Quantity: Integer)
+    var
+        Items : Record ItemsTable;
+    begin
+        if Items.Get(ItemID) then
+            Items.Quantity := Items.Quantity- Quantity;
+    end;
+
+    procedure ReturnItem()
+    var
+        Items : Record ItemsTable;
+    begin
+        if Items.Get(ItemID) then
+            Items.Quantity := Items.Quantity- Quantity;
     end;
 }

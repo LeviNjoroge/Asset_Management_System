@@ -62,6 +62,7 @@ page 50315 Return_CardPage
                 actionref("Return Item"; ReturnsCard) { }
                 actionref(ReturnList; ReturnsList) { }
             }
+            actionref(Mark_Return; Mark_Returned){}
         }
         area(Navigation)
         {
@@ -129,6 +130,17 @@ page 50315 Return_CardPage
                     varReturnsList.Run();
                 end;
             }
+            action(Mark_Returned)
+            {
+                Image = Completed;
+                Caption = 'Mark returned';
+                Enabled = not varUpdateReturnButton;
+                trigger OnAction()
+                begin
+                    varLendingMan.UpdateStatus(Rec.Lending_ID);
+                    varUpdateReturnButton := varLendingMan.UpdateStatus(Rec.Lending_ID);
+                end;
+            }
         }
     }
 
@@ -141,6 +153,6 @@ page 50315 Return_CardPage
         varLendingList: Page "Lending List";
         varReturnsCard: Page Return_CardPage;
         varReturnsList: Page Return_List;
-
-
+        varLendingMan : Codeunit "Lending Management";
+        varUpdateReturnButton : Boolean;
 }
