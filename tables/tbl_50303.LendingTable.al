@@ -36,7 +36,12 @@ table 50303 "Lending Table"
         field(7; Status; Option)
         {
             DataClassification = ToBeClassified;
-            OptionMembers = Pending,Returned;
+            OptionMembers = Pending,Returned,Overdue;
+        }
+        field(8; "Overdue Reminder Sent"; Boolean)
+        {
+            Caption = 'Overdue Reminder Sent';
+            DataClassification = CustomerContent;
         }
     }
 
