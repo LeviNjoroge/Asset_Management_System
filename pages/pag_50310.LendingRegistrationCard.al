@@ -74,6 +74,7 @@ page 50310 "Lending Registration Card"
                 actionref("Return Item"; ReturnsCard) { }
                 actionref(ReturnList; ReturnsList) { }
             }
+            actionref(ApproveLend; Approve_Lending){}
         }
         area(Navigation)
         {
@@ -141,6 +142,19 @@ page 50310 "Lending Registration Card"
                     varReturnsList.Run();
                 end;
             }
+            action(Approve_Lending)
+            {
+                Image = Completed;
+                Caption = 'Approve Lending';
+                Enabled = not varApproveButton;
+                trigger OnAction()
+                var
+                    LendingMan : Codeunit "Lending Management";
+                begin
+                    LendingMan.LendItem(Rec.ItemID, Rec.Quatity);
+                    varApproveButton := true;
+                end;
+            }
         }
     }
 
@@ -153,5 +167,6 @@ page 50310 "Lending Registration Card"
         varLendingList: Page "Lending List";
         varReturnsCard: Page Return_CardPage;
         varReturnsList: Page Return_List;
+        varApproveButton: Boolean;
 
 }

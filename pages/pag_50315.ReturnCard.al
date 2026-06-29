@@ -138,6 +138,7 @@ page 50315 Return_CardPage
                 trigger OnAction()
                 begin
                     varLendingMan.UpdateStatus(Rec.Lending_ID);
+                    varLendingMan.ReturnItem(Rec.Lending_ID);
                     varUpdateReturnButton := varLendingMan.UpdateStatus(Rec.Lending_ID);
                 end;
             }
