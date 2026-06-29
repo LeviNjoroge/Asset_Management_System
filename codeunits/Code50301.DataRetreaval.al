@@ -12,7 +12,6 @@ codeunit 50301 DataRetreaval
     begin
         if Employee.Get(EmployeeId) then
             EmpName := Employee."Employee Name";
-        // exit(Employee."Employee Name");
         exit(EmpName);
     end;
 
@@ -21,5 +20,12 @@ codeunit 50301 DataRetreaval
         Employee: Record "Employees Table";
     begin
         exit(Employee.Get(EmployeeId));
+    end;
+
+    procedure getItem(ItemID: Integer) : Boolean
+    var
+        Items : Record ItemsTable;
+    begin
+        exit(Items.Get(ItemID));
     end;
 }
