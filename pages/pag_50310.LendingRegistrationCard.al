@@ -74,7 +74,7 @@ page 50310 "Lending Registration Card"
                 actionref("Return Item"; ReturnsCard) { }
                 actionref(ReturnList; ReturnsList) { }
             }
-            actionref(ApproveLend; Approve_Lending){}
+            actionref(ApproveLend; Approve_Lending) { }
         }
         area(Navigation)
         {
@@ -149,11 +149,14 @@ page 50310 "Lending Registration Card"
                 Enabled = not varApproveButton;
                 trigger OnAction()
                 var
-                    LendingMan : Codeunit "Lending Management";
+                    LendingMan: Codeunit "Lending Management";
+                    SendNotif: codeunit "Send Notification";
                 begin
                     LendingMan.LendItem(Rec.ItemID, Rec.Quatity);
+                    SendNotif.BorrowRequestNotification(Rec.EmployeeID, Rec."Date of Return");
                     varApproveButton := true;
                 end;
+
             }
         }
     }

@@ -138,6 +138,16 @@ page 50301 "Employee Registration Card"
                     varReturnsList.Run();
                 end;
             }
+            action(CompleteRegistration)
+            {
+                image = Completed;
+                trigger OnAction()
+                var
+                    sendnotification: Codeunit "Send Notification";
+                begin
+                    sendnotification.RegistrationNotification(Rec.Employee_No);
+                end;
+            }
         }
     }
 
