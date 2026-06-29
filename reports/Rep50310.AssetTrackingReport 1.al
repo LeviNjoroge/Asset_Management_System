@@ -3,27 +3,27 @@ report 50310 "Asset Tracking Report"
     ApplicationArea = All;
     Caption = 'Asset Tracking Report';
     UsageCategory = ReportsAndAnalysis;
-    DefaultLayout = Excel;
-    ExcelLayout = 'reportdemo.xlsx';
+    DefaultLayout = RDLC;
+    RDLCLayout = 'AssetTrackingReportLayout.rdl';
     dataset
     {
         dataitem(LendingTable; "Lending Table")
         {
-            column(LendingID; LendingID)
+            column("No"; LendingID)
             {
             }
             column(EmployeeID; EmployeeID)
             {
             }
-            column(Borrower; varDataRetreaval.GetEmployeeName(EmployeeID)){}
-            column(Departmaent;varDataRetreaval.GetDepartment(EmployeeID)){}
+            column(Employee; varDataRetreaval.GetEmployeeName(EmployeeID)){}
+            // column(Departmaent;varDataRetreaval.GetDepartment(EmployeeID)){}
             column(ItemID; ItemID)
             {
             }
-            column(ItemName;varDataRetreaval.GetItemName(ItemID))
+            column(Item;varDataRetreaval.GetItemName(ItemID))
             {
             }
-            column(Quatity; Quatity)
+            column(No_of_Items; Quatity)
             {
             }
             column(DateofIssue; "Date of Issue")
