@@ -7,10 +7,10 @@ codeunit 50304 "Lending Management"
 
     procedure UpdateStatus(LendingId: Integer): Boolean
     var
-        LendingTable : Record "Lending Table";
+        LendingTable: Record "Lending Table";
     begin
         if LendingTable.Get(LendingId) then begin
-            LendingTable.Status:= LendingTable.Status::Returned;
+            LendingTable.Status := LendingTable.Status::Returned;
             LendingTable.Modify();
             exit(true);
         end else begin
@@ -21,11 +21,11 @@ codeunit 50304 "Lending Management"
 
     procedure LendItem(ItemID: Integer; Quantity: Integer)
     var
-        Items : Record ItemsTable;
+        Items: Record ItemsTable;
     begin
         if Items.Get(ItemID) then
             if Items.Quantity >= Quantity then begin
-                Items.Quantity := Items.Quantity- Quantity;
+                Items.Quantity := Items.Quantity - Quantity;
             end else begin
                 Error('Not enough items in stock to fulfil request!');
             end;
@@ -33,7 +33,7 @@ codeunit 50304 "Lending Management"
 
     procedure ReturnItem(ItemID: Integer; Quantity: Integer)
     var
-        Items : Record ItemsTable;
+        Items: Record ItemsTable;
     begin
         if Items.Get(ItemID) then
             Items.Quantity := Items.Quantity + Quantity;
